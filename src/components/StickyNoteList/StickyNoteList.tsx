@@ -7,7 +7,6 @@ import arrayMove from 'array-move';
 import { Layout, Row, Col, Select, Button } from 'antd';
 import { SortableItemProps, SortableListProps, INote } from '../../types/types';
 import { MdAddCircleOutline, MdRemoveCircleOutline } from 'react-icons/md';
-import { Console } from 'console';
 
 const { Content } = Layout;
 const { Option } = Select;
