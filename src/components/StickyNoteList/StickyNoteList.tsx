@@ -108,7 +108,11 @@ const StickyNoteList = () => {
   const starredHandler = (id: number) => {
     const note = [...notes].find((note: INote) => note.id === id);
     if (note) {
-      note.isStarred = !note.isStarred;
+      if (note.isStarred) {
+        note.isStarred = false;
+      } else {
+        note.isStarred = true;
+      }
       const newNotes = notes.map((oldNote: INote) => {
         if (oldNote.id === note.id) {
           return { ...note };
