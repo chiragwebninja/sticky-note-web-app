@@ -7,6 +7,7 @@ import arrayMove from 'array-move';
 import { Layout, Row, Col, Select, Button } from 'antd';
 import { SortableItemProps, SortableListProps, INote } from '../../types/types';
 import { MdAddCircleOutline, MdRemoveCircleOutline } from 'react-icons/md';
+import { Console } from 'console';
 
 const { Content } = Layout;
 const { Option } = Select;
@@ -124,7 +125,9 @@ const StickyNoteList = () => {
   };
 
   // On Select Handler for Sticky Notes Filter
-  const selectHandler = () => setShowStarredNotes((prevStar) => !prevStar);
+  const selectHandler = (value: string) => {
+    setShowStarredNotes(value === 'all' ? false : true);
+  };
 
   return (
     <>
@@ -179,14 +182,13 @@ const StickyNoteList = () => {
             <Row>
               <Col span={24}>
                 <Select
+                  defaultValue="all"
                   className={style.filterSelection}
-                  placeholder="Filter Sticky Notes"
                   onChange={selectHandler}
                 >
                   <Option value="all">All Notes</Option>
-                  <Option value="starred">Starred Notes</Option>
+                  <Option value="star">Starred Notes</Option>
                 </Select>
-
                 <SortableList
                   axis={'xy'}
                   items={
