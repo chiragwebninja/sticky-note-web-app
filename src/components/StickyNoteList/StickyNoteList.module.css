@@ -1,0 +1,126 @@
+.layout {
+  background: transparent !important;
+}
+.leftSidebar {
+  position: fixed;
+  max-width: 25%;
+  padding: 20px;
+  background-color: #353232;
+  height: 100%;
+}
+.leftSidebar h3 {
+  color: #fff;
+  font-weight: 700;
+  font-size: 22px;
+}
+.rightSideWrapper {
+  position: relative;
+  width: calc(100% - 25%);
+  margin-left: 25%;
+}
+.cardList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.addStickyCard {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.addStickyCard textarea {
+  border: solid 1px #919191;
+  appearance: none;
+  width: 100%;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+  padding: 16px;
+  color: #1e1e1e;
+  transition: all 0.3s ease-in-out;
+}
+.descrInput textarea:focus {
+  border-color: #9b41d5;
+}
+.colorPalate {
+  margin: 32px 0;
+}
+.colorPalate input {
+  padding: 5px 17px;
+  background: #ffffff;
+  border-radius: 20px;
+  width: 120px !important;
+  outline: none;
+  border: 1px solid #505050;
+  font-size: 16px;
+}
+.addButton {
+  margin-top: 16px;
+}
+.addButton button {
+  display: flex;
+  align-items: center;
+  background: #353232;
+  border-color: #353232;
+}
+.addButton button svg {
+  margin-right: 5px;
+  font-size: 20px;
+}
+.filterSelection {
+  width: 200px;
+}
+
+.show {
+  display: block !important;
+}
+
+.hide {
+  display: none;
+}
+
+@media only screen and (max-width: 576px) {
+  .leftSidebar {
+    position: sticky;
+    top: 0;
+    max-width: 100%;
+    height: auto;
+    z-index: 1075;
+    padding: 10px 20px;
+    width: 100%;
+  }
+  .rightSideWrapper {
+    margin-left: 0;
+    width: 100%;
+  }
+  .cardList li {
+    width: 100%;
+  }
+  .colorPalate {
+    margin: 0;
+  }
+  .addStickyCard {
+    padding: 16px;
+    display: none;
+  }
+  .filterSelection {
+    width: 100%;
+  }
+  .hide {
+    display: block;
+  }
+  .leftSidebar h3 {
+    margin-bottom: 0;
+  }
+  .titleHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  .titleHeader button svg {
+    font-size: 27px !important;
+  }
+}
